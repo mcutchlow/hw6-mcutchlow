@@ -16,6 +16,7 @@ def make_change(total):
     find_combinations(total, [], 0)
     return result
 
+
 def dict_filter(func, dictionary):
     filtered_dict = {}
     for key, value in dictionary.items():
@@ -23,12 +24,13 @@ def dict_filter(func, dictionary):
             filtered_dict[key] = value
     return filtered_dict
 
+
 def checker(name, abbrev):
     return abbrev[0] == "I" and name[1] == "l"
 
+
 class KVTree:
 
-    
     def __init__(self, key, value):
         self.key = key
         self.value = value
@@ -42,8 +44,8 @@ def treemap(func, tree):
     for child in tree.children:
         treemap(func, child)
 
-class DTree:
 
+class DTree:
 
     def __init__(self, variable, threshold, lessequal, greater, outcome):
         if (variable is not None and threshold is not None and

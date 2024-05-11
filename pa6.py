@@ -1,13 +1,13 @@
 
 def make_change(total):
     """
-    Generates all possible combinations of coins that add up to the given total.
+    Generates all combinations of coins that add up to the given total.
 
     args:
         total (int): The total amount to make change for.
 
     returns:
-        list: list of lists where each inner list is a distinct combination of \
+        list: list of lists where each list is a distinct combination of \
             coins adding up to that amount
     """
     coins = [1, 5, 10, 25, 100]

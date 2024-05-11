@@ -13,7 +13,6 @@ def make_change(total):
                 combo.append(coin)
                 find_combinations(remaining - coin, combo, i)
                 combo.pop()
-    
     find_combinations(total, [], 0)
     return result
 
@@ -28,6 +27,8 @@ def checker(name, abbrev):
     return abbrev[0] == "I" and name[1] == "l"
 
 class KVTree:
+
+    
     def __init__(self, key, value):
         self.key = key
         self.value = value
@@ -42,11 +43,13 @@ def treemap(func, tree):
         treemap(func, child)
 
 class DTree:
+
+
     def __init__(self, variable, threshold, lessequal, greater, outcome):
         if (variable is not None and threshold is not None and
-                lessequal is not None and greater is not None and outcome is None) or \
-                (variable is None and threshold is None and
-                 lessequal is None and greater is None and outcome is not None):
+                lessequal is not None and greater is not None and outcome is \
+                    None) or variable is None and threshold is None and \
+                 lessequal is None and greater is None and outcome is not None:
             self.variable = variable
             self.threshold = threshold
             self.lessequal = lessequal
@@ -80,6 +83,7 @@ class DTree:
             if node.variable in seen_variables:
                 return False
             seen_variables.add(node.variable)
-            return helper(node.lessequal, seen_variables.copy()) and helper(node.greater, seen_variables.copy())
+            return helper(node.lessequal, seen_variables.copy()) \
+                and helper(node.greater, seen_variables.copy())
 
         return helper(self, set())

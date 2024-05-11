@@ -1,5 +1,15 @@
 
 def make_change(total):
+    """
+    Generates all possible combinations of coins that add up to the given total.
+
+    args:
+        total (int): The total amount to make change for.
+
+    returns:
+        list: list of lists where each inner list is a distinct combination of \
+            coins adding up to that amount
+    """
     coins = [1, 5, 10, 25, 100]
     result = []
 
@@ -18,15 +28,23 @@ def make_change(total):
 
 
 def dict_filter(func, dictionary):
+    """
+    Filtesr a dictionary based on given function
+
+    Args:
+        func (function): takes a key-value pair from the dictionary \
+            and returns True if the pair should be included in the \
+                filtered dictionary, otherwise returns False.
+        dictionary (dict): dictionary to be filtered.
+
+    Returns:
+        dict: new dictionary containing the True key-value pairs
+    """
     filtered_dict = {}
     for key, value in dictionary.items():
         if func(key, value):
             filtered_dict[key] = value
     return filtered_dict
-
-
-def checker(name, abbrev):
-    return abbrev[0] == "I" and name[1] == "l"
 
 
 class KVTree:

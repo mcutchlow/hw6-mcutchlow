@@ -27,6 +27,20 @@ def dict_filter(func, dictionary):
 def checker(name, abbrev):
     return abbrev[0] == "I" and name[1] == "l"
 
+class KVTree:
+    def __init__(self, key, value):
+        self.key = key
+        self.value = value
+        self.children = []
+
+    def add_child(self, child):
+        self.children.append(child)
+
+def treemap(func, tree):
+    tree.key, tree.value = func(tree.key, tree.value)
+    for child in tree.children:
+        treemap(func, child)
+
 class DTree:
     def __init__(self, variable, threshold, lessequal, greater, outcome):
         if (variable is not None and threshold is not None and
